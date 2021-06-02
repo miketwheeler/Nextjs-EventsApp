@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { getEventById } from '../../dummy-data';
+import EventSummary from '../../components/event-detail/event-summary';
+import EventLogistics from '../../components/event-detail/event-logistics';
+import EventContent from '../../components/event-detail/event-content';
+
 
 
 function EventDetailPage() {
@@ -13,9 +18,17 @@ function EventDetailPage() {
 	}
 
 	return (
-		<div>
-			<h1>Event Detail</h1>
-		</div>
+		<Fragment>
+			<EventSummary title={event.title}/>
+			<EventLogistics 
+				date={event.date}
+				address={event.location}
+				image={event.image}
+				iamgeAlt={event.title}
+				/>
+				<p>{event.description}</p>
+			<EventContent />
+		</Fragment>
 	);
 }
 
