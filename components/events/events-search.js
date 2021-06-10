@@ -17,7 +17,7 @@ function EventSearch(props) {
 	}
 
 	return (
-		<form className={EventSearchStyle.form} onSbmit={submitHandler}>
+		<form className={EventSearchStyle.form} onSubmit={submitHandler}>
 			<div className={EventSearchStyle.controls}>
 				<div className={EventSearchStyle.control}>
 					<label htmlFor='year'>Year</label>
